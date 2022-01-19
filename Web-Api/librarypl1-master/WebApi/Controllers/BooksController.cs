@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Business.Interfaces;
+using Business.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers
@@ -10,41 +12,70 @@ namespace WebApi.Controllers
     [ApiController]
     public class BooksController : ControllerBase
     {
-        //Inject book service via constructor
-        
-        //GET: /api/books/?Author=Jon%20Snow&Year=1996
+        private readonly IBookService _booksService;
+
+        public BooksController(IBookService booksService)
+        {
+            _booksService = booksService;
+        }
+
         [HttpGet]
         public ActionResult<IEnumerable<BookModel>> GetByFilter([FromQuery] FilterSearchModel model)
         {
-            throw new NotImplementedException();
+            var books = _booksService.GetByFilter(model);
+
+            return Ok(books);
         }
-        
-        //GET: /api/books/1
+
         [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<BookModel>>> GetById(int id)
         {
-            throw new NotImplementedException();
+            var book = await _booksService.GetByIdAsync(id);
+
+            if (book == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(book);
         }
 
-        //POST: /api/books/
         [HttpPost]
         public async Task<ActionResult> Add([FromBody] BookModel bookModel)
         {
-            throw new NotImplementedException();
+            try
+            {
+                await _booksService.AddAsync(bookModel);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+
+            return CreatedAtAction(nameof(Add), new {bookModel.Id}, bookModel);
         }
 
-        //PUT: /api/books/
         [HttpPut]
         public async Task<ActionResult> Update(BookModel bookModel)
         {
-            throw new NotImplementedException();
+            try
+            {
+                await _booksService.UpdateAsync(bookModel);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+
+            return Ok();
         }
 
-        //DELETE: /api/books/1
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
         {
-            throw new NotImplementedException();
+            await _booksService.DeleteByIdAsync(id);
+
+            return Ok();
         }
     }
 }
