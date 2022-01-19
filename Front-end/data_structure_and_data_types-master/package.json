@@ -1,0 +1,33 @@
+{
+  "name": "data_structure_and_data_types",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test:junit": "cross-env MOCHA_FILE=junit.xml mocha test --reporter mocha-junit-reporter",
+    "test:xunit": "cross-env MOCHA_FILE=xunit.xml mocha test --reporter mocha-xunit-reporter",
+    "test": "npm run test:junit",
+    "build": "echo \"Dummy build script\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/OlehKustov/data_structure_and_data_types.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/OlehKustov/data_structure_and_data_types/issues"
+  },
+  "homepage": "https://gitlab.com/OlehKustov/data_structure_and_data_types#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "cross-env": "^6.0.0",
+    "mocha": "^6.2.0",
+    "mocha-junit-reporter": "^1.23.1",
+    "mocha-xunit-reporter": "^1.1.0"
+  }
+}

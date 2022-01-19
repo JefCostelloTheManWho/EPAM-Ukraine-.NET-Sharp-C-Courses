@@ -1,0 +1,354 @@
+h1 {
+  font-size: 35px;
+  font-weight: 800;
+}
+h2 {
+  margin-top: 0px;
+  padding-top: 20px;
+  font-size: 27px;
+}
+h3 {
+  margin-top: 0px;
+  font-weight: 600;
+  font-size: 17px;
+}
+header {
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+body {
+  padding: 0px !important;
+  margin: 0px !important;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+}
+main {
+  margin-right: auto;
+  margin-left: auto;
+  background-color: rgb(109, 123, 204);
+  display: flex;
+  justify-content: center;
+  height: 900px;
+}
+.analysis-form {
+  background-color: white;
+  height: 400px;
+  width: 600px;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 4px;
+}
+form {
+  display: block;
+  margin-top: 30px;
+}
+input {
+  display: block;
+  margin-left: 110px;
+  height: 40px;
+  width: 360px;
+  border: 1px solid rgba(233, 218, 218, 0.993);
+  border-radius: 2px;
+  color: rgba(185, 173, 173, 0.993);
+}
+p {
+  color: rgba(124, 117, 117, 0.993);
+  font-size: 15px;
+  width: 510px;
+  margin-left: 60px;
+  padding-top: 70px;
+}
+.input-value{
+  padding-left: 20px;
+  margin-top: 7px;
+}
+.boxes-content {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: auto;
+  width: 1000px;
+  margin-right: auto;
+  padding-bottom: 220px;
+}
+.sumbitBtw {
+  width: 130px;
+  height: 40px;
+  margin-top: 25px;
+  border-radius: 2px;
+  border: 1px solid red;
+  font-size: 11px;
+  background-color: rgb(224, 19, 19);
+  color: white;
+}
+.get-analyze-сontent {
+  display: block;
+  text-align: center;
+}
+.arrow-icon {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  background: transparent;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
+.arrowDown:hover {
+  animation-duration: 9s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes slidein {
+  from {
+    margin-bottom: 100%;
+    width: 5%;
+  }
+  to {
+    margin-top: 400px;
+  }
+}
+.cancelBtw {
+  position: relative;
+  left: 300px;
+  bottom: -45px;
+}
+.close {
+  position: relative;
+  z-index: 2;
+  right: 40px;
+  bottom: -12px;
+  width: 32px;
+  height: 32px;
+  }
+  .close:hover {
+  opacity: 0.4;
+  }
+  .close:before, .close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 24px;
+  width: 2px;
+  background-color: rgb(255, 255, 255);
+  }
+  .close:before {
+  transform: rotate(45deg);
+  }
+  .close:after {
+  transform: rotate(-45deg);
+  }
+.arrowDown {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  border: solid rgb(255, 255, 255);
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 7px;
+  margin-top: 13px;
+  margin-right: 3px;
+}
+.contact-us {
+  background-color: rgb(22, 21, 21);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 480px;
+  text-align: center;
+  color: white;
+}
+.menu-icon {
+  width: 45px;
+  height: 4px;
+  background-color: rgb(255, 255, 255);
+  margin: 6px 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 22px;
+  margin-bottom: 80px;
+}
+.titles {
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+.title-icon {
+  padding-top: 60px;
+}
+.input-value:hover {
+  border: 1px solid rgb(123, 123, 206);
+}
+.box {
+  width: 250px;
+  height: 250px;
+  background-color: rgb(233, 123, 123);
+  color: white;
+}
+.box-img {
+  padding-top: 30px;
+}
+.block-image {
+ -webkit-transform: perspective(1px) translateZ(0);
+ transform: perspective(1px) translateZ(0);
+ box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+ -webkit-transition-duration: 0.2s;
+ transition-duration: 0.2s;
+ -webkit-transition-property: transform;
+ transition-property: transform;
+}
+.block-image:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.analysis-form:before {
+  content: '';
+  position: relative; 
+  bottom: 32px; 
+  border: 20px solid transparent;
+  border-bottom: 20px solid white;
+}
+.analysis-form p {
+  padding-top: 20px;
+}
+.social-medias {
+  list-style-type: none;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+li {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 15px 25px 24px 18px;
+  margin: 13px;
+  text-decoration: none;
+  width: 30px;
+  height: 30px;
+  border: 3px solid rgb(94, 89, 89);
+  background: transparent;
+}
+li:hover {
+  border: 2px solid red;
+}
+.media {
+  padding-right: 13px;
+}
+.email {
+  margin-right: auto;
+  margin-left: auto;
+  background-color: rgb(94, 89, 89);
+  border: 1px solid rgb(94, 89, 89);
+  width: 600px;
+  padding-left: 20px;
+}
+.subscribe {
+  width: 100px;
+  height: 40px;
+  border: 3px solid  rgb(94, 89, 89);
+  background: transparent;
+  color: white;
+  margin-top: 30px;
+}
+.copyright {
+  background-color: rgb(73, 71, 71);
+  height: 20px;
+  margin: auto auto auto auto;
+}
+.copyrightText {
+  text-align: center;
+  position: absolute;
+  top: 33%;
+  left: 43%;
+}
+footer {
+  background: rgb(73, 71, 71);
+  margin: 0px;
+  padding: 0px;
+  height: 60px;
+  display: flex;
+  color: rgb(184, 175, 175);
+  text-align: center;
+}
+
+@media (min-width: 748px) and (max-width: 1280px) {
+.boxes-content {
+  display: flex;
+  flex-wrap: wrap;
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 200px;
+}
+.group1 {
+  order: 1;
+}
+.group2 {
+  order: 2;
+}
+.group3 {
+  order: 4;
+}
+.group4 {
+  order: 3;
+}
+.group5 {
+  order: 6;
+}
+.group6 {
+  order: 5;
+}
+.group7 {
+  order: 7;
+}
+.group8 {
+  order: 8;
+}
+}
+
+@media (min-width: 360px) and (max-width: 748px) {
+.boxes-content {
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 50px;
+}
+.analysis-form {
+  background-color: white;
+  height: 400px;
+  width: 400px;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 4px;
+}
+.input-value{
+  padding-left: 10px;
+  margin-top: 7px;
+  width: 200px;
+}
+.cancelBtw {
+  position: relative;
+  left: 200px;
+  bottom: -45px;
+}
+.analysis-content p {
+  width: 300px;
+}
+
+}
