@@ -1,4 +1,7 @@
+using System.Linq;
 using AutoMapper;
+using Business.Models;
+using Data.Entities;
 
 namespace Business
 {
@@ -10,12 +13,26 @@ namespace Business
                 .ForMember(p => p.CardsIds, c => c.MapFrom(card => card.Cards.Select(x => x.CardId)))
                 .ReverseMap();
 
-            //TODO: Create mapping for card and card model
+            CreateMap<Card, CardModel>()
+                .ForMember(p => p.BooksIds, c => c.MapFrom(card => card.Books.Select(x => x.BookId)))
+                .ReverseMap();
 
-            //TODO: Create mapping that combines Reader and ReaderProfile into ReaderModel
-            //Before doing reader mapping, learn more about projection in AutoMapper.
-            //https://docs.automapper.org/en/stable/Projection.html
-            //https://www.infoworld.com/article/3192900/how-to-work-with-automapper-in-csharp.html
+            CreateMap<Reader, ReaderModel>()
+                .ForMember(p => p.CardsIds, c => c.MapFrom(card => card.Cards.Select(x => x.Id)))
+                .ForMember(destination => destination.Phone,
+                    map => map.MapFrom(source => source.ReaderProfile.Phone))
+                .ForMember(destination => destination.Address,
+                    map => map.MapFrom(source => source.ReaderProfile.Address));
+            CreateMap<ReaderModel, Reader>()
+                .ForMember(p => p.Cards, c => c.MapFrom(card => card.CardsIds))
+                .ForMember(destination => destination.ReaderProfile,
+                    map => map.MapFrom(
+                        source => new ReaderProfile
+                        {
+                            ReaderId = source.Id,
+                            Phone = source.Phone,
+                            Address = source.Address
+                        }));
         }
     }
 }
